@@ -28,6 +28,18 @@ max user processes              (-u) 4096
 virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
 
+sysctl kernel.shm{max,all,mni}
+kernel.shmmax = 33554432
+kernel.shmall = 2097152
+kernel.shmmni = 4096
+
+Shmem:             27144 kB
+ipcs -m 
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+
+
 65536 bytes mmaped
 131072 bytes mmaped
 262144 bytes mmaped
@@ -46,30 +58,35 @@ file locks                      (-x) unlimited
 OpenVZ system detected...
 Checking /proc/user_beancounters limits for shmpages
 
-shmpages used & percentage used: 29 MB (0%)
+shmpages used & percentage used: 26 MB (0%)
+
+             total       used       free     shared    buffers     cached
+Mem:           128         92         35         26          0         56
+-/+ buffers/cache:         35         92
+Swap:           64          9         54
 
 Version: 2.5
        uid  resource                     held              maxheld              barrier                limit              failcnt
-    38444:  kmemsize                 25246166             26095616             67108864             67108864                    0
+    38444:  kmemsize                 37136362             39624704             67108864             67108864                    0
             lockedpages                     0                    0                16384                16384                    0
-            privvmpages                 20194               283361  9223372036854775807  9223372036854775807                    0
-            shmpages                     7426               138498  9223372036854775807  9223372036854775807                    0
+            privvmpages                 18506               283361  9223372036854775807  9223372036854775807                    0
+            shmpages                     6786               138498  9223372036854775807  9223372036854775807                    0
             dummy                           0                    0  9223372036854775807  9223372036854775807                    0
-            numproc                        38                   63  9223372036854775807  9223372036854775807                    0
-            physpages                   21417                32768                    0                32768                    0
+            numproc                        34                   63  9223372036854775807  9223372036854775807                    0
+            physpages                   23604                32768                    0                32768                    0
             vmguarpages                     0                    0  9223372036854775807  9223372036854775807                    0
-            oomguarpages                 6895                10271  9223372036854775807  9223372036854775807                    0
-            numtcpsock                     10                   13  9223372036854775807  9223372036854775807                    0
-            numflock                        8                   16  9223372036854775807  9223372036854775807                    0
-            numpty                          2                    2  9223372036854775807  9223372036854775807                    0
+            oomguarpages                 6039                10271  9223372036854775807  9223372036854775807                    0
+            numtcpsock                      9                   13  9223372036854775807  9223372036854775807                    0
+            numflock                        6                   16  9223372036854775807  9223372036854775807                    0
+            numpty                          1                    2  9223372036854775807  9223372036854775807                    0
             numsiginfo                      1                   21  9223372036854775807  9223372036854775807                    0
-            tcpsndbuf                  181072               242640  9223372036854775807  9223372036854775807                    0
-            tcprcvbuf                  163840               212992  9223372036854775807  9223372036854775807                    0
-            othersockbuf               138720               214440  9223372036854775807  9223372036854775807                    0
+            tcpsndbuf                  172352               242640  9223372036854775807  9223372036854775807                    0
+            tcprcvbuf                  147456               212992  9223372036854775807  9223372036854775807                    0
+            othersockbuf               136408               214440  9223372036854775807  9223372036854775807                    0
             dgramrcvbuf                     0                 4624  9223372036854775807  9223372036854775807                    0
-            numothersock                  108                  128  9223372036854775807  9223372036854775807                    0
-            dcachesize               21225812             21284880             33554432             33554432                    0
-            numfile                       690                  815  9223372036854775807  9223372036854775807                    0
+            numothersock                  103                  128  9223372036854775807  9223372036854775807                    0
+            dcachesize               33538504             33554407             33554432             33554432                    0
+            numfile                       551                  815  9223372036854775807  9223372036854775807                    0
             dummy                           0                    0  9223372036854775807  9223372036854775807                    0
             dummy                           0                    0  9223372036854775807  9223372036854775807                    0
             dummy                           0                    0  9223372036854775807  9223372036854775807                    0
