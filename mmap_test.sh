@@ -53,6 +53,8 @@ openvz_checks() {
     echo
     echo "shmpages used & percentage used: $mb MB ($per%)"
     echo
+    free -m
+    echo
     cat /proc/user_beancounters
   fi
 }
