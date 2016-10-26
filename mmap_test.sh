@@ -6,7 +6,7 @@
 # variables
 #############
 DT=`date +"%d%m%y-%H%M%S"`
-MMAP_TESTFILE='https://gist.githubusercontent.com/centminmod/38ab2e8abb45021a62e2901f3e37c0d1/raw/mmap_test.c'
+MMAP_TESTFILE='https://raw.githubusercontent.com/centminmod/mmap_test/master/mmap_test.c'
 ######################################################
 # functions
 #############
