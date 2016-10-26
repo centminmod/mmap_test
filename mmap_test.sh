@@ -29,6 +29,8 @@ run() {
   echo
   echo "ulimit -aH"
   ulimit -aH
+  echo "sysctl kernel.shm{max,all,mni}"
+  sysctl kernel.shm{max,all,mni}
   echo
   if [[ -f /root/tools/mmaptest/mmap_test.sh || ! -f /root/tools/mmaptest/mmap_test.sh ]]; then
     rm -rf /root/tools/mmaptest/mmap_test.sh
