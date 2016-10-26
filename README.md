@@ -1,0 +1,1 @@
+shared memory mapping test for CentminMod.com LEMP stacks
