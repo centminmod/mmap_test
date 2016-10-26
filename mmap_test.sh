@@ -34,6 +34,7 @@ run() {
   sysctl kernel.shm{max,all,mni}
   echo
   grep Shmem /proc/meminfo
+  echo
   echo "ipcs -m "
   ipcs -m
   echo
