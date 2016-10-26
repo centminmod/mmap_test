@@ -52,6 +52,8 @@ openvz_checks() {
     let "mb=$use/256"
     echo
     echo "shmpages used & percentage used: $mb MB ($per%)"
+    echo
+    cat /proc/user_beancounters
   fi
 }
 
