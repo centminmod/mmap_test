@@ -29,6 +29,7 @@ run() {
   echo
   echo "ulimit -aH"
   ulimit -aH
+  echo
   echo "sysctl kernel.shm{max,all,mni}"
   sysctl kernel.shm{max,all,mni}
   echo
