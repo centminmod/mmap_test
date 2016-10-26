@@ -33,6 +33,10 @@ run() {
   echo "sysctl kernel.shm{max,all,mni}"
   sysctl kernel.shm{max,all,mni}
   echo
+  grep Shmem /proc/meminfo
+  echo "ipcs -m "
+  ipcs -m
+  echo
   if [[ -f /root/tools/mmaptest/mmap_test.sh || ! -f /root/tools/mmaptest/mmap_test.sh ]]; then
     rm -rf /root/tools/mmaptest/mmap_test.sh
     wget -O /root/tools/mmaptest/mmap_test.sh $MMAP_TESTSCRIPT >/dev/null 2>&1
