@@ -7,6 +7,7 @@
 #############
 DT=`date +"%d%m%y-%H%M%S"`
 MMAP_TESTFILE='https://raw.githubusercontent.com/centminmod/mmap_test/master/mmap_test.c'
+MMAP_TESTSCRIPT='https://raw.githubusercontent.com/centminmod/mmap_test/master/mmap_test.sh'
 ######################################################
 # functions
 #############
@@ -16,6 +17,7 @@ get() {
   fi
   if [ -d /root/tools/mmaptest ]; then
     cd /root/tools/mmaptest
+    rm -rf mmap_test.c
     wget -O mmap_test.c $MMAP_TESTFILE >/dev/null 2>&1
     gcc -o mmap_test mmap_test.c
   fi
@@ -28,6 +30,10 @@ run() {
   echo "ulimit -aH"
   ulimit -aH
   echo
+  if [[ -f /root/tools/mmaptest/mmap_test.sh || ! -f /root/tools/mmaptest/mmap_test.sh ]]; then
+    rm -rf /root/tools/mmaptest/mmap_test.sh
+    wget -O /root/tools/mmaptest/mmap_test.sh $MMAP_TESTSCRIPT >/dev/null 2>&1
+  fi
   if [ -f /root/tools/mmaptest/mmap_test ]; then
     /root/tools/mmaptest/mmap_test
   fi
@@ -45,7 +51,7 @@ openvz_checks() {
     let "per=$use*100/$max"
     let "mb=$use/256"
     echo
-    echo "shmpages: $mb MB ($per%)"
+    echo "shmpages used & percentage used: $mb MB ($per%)"
   fi
 }
 
