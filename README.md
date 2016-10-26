@@ -46,5 +46,5 @@ file locks                      (-x) unlimited
 OpenVZ system detected...
 Checking /proc/user_beancounters limits for shmpages
 
-shmpages: 29 MB (0%)
+shmpages used & percentage used: 29 MB (0%)
 ```
